@@ -25,7 +25,7 @@ except:
     cursor = connection.cursor()
     cursor.execute("CREATE DATABASE genome")
     cursor.close()
-    connection.close()
+    #connection.close()
 
 
 # Join table between users and relatives, see User model relatives property

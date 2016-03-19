@@ -7,6 +7,7 @@ import models
 import controller
 from os import path
 import models
+import json
 
 
 #Initialize Flask application
@@ -27,6 +28,8 @@ SNPS = ["rs12913832"]
 DEFAULT_SCOPE = "names basic email ancestry relatives %s" % (" ".join(SNPS))
 BASE_API_URL = "https://%s/" % API_SERVER
 
+class MyDict(dict):
+    pass
 
 @app.route('/')
 def home():
@@ -36,7 +39,12 @@ def home():
 @app.route('/get_info/')
 def getUser():
     print 'in the get info route=========================>>>>>>>>>>>>>>>>>>'
-    return jsonify({'hello': 'hello from the server side!'})
+    rel = models.db_session.query(models.Relative).get(1)
+    print 'rel ============>>>>>>>>>>>>>>>>>>>>>>', rel
+    result = MyDict()
+    result['name'] = str(rel.first_name)
+    print 'result ===========================>>>>>>>>>>>>>>>>', result
+    return jsonify(result)
    #  look into database, query for user information then return response with all of user's data
 
 @app.route('/receive_code/')

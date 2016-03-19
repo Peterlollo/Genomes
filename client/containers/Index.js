@@ -12,7 +12,7 @@ export default class Index extends Component {
   constructor(props) {
     super(props)
   }
-  componentWillMount() {
+  componentDidMount() {
     // execute a function from this.props here ex. this.props.requestLogIn
     // this.props.requestLogIn will be imported from actions
 
