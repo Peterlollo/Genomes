@@ -23,7 +23,7 @@ if is_prod:
         port=url.port
     )
     #Initialize postgreSQL genome database
-    engine = create_engine('postgres://ekmsxuepfrzsrq:eheMsYxYxlKSuLbKvgyrxkAWlH@ec2-54-225-102-131.compute-1.amazonaws.com:5432/deued1oqupgabe', convert_unicode=True)
+    engine = create_engine('postgres://kcnqonukutmphz:GEyGV9nTZF0PJsxBN6yVxQSOMH@ec2-54-83-198-111.compute-1.amazonaws.com:5432/d6famvj5mosmlf', convert_unicode=True)
 else:
     engine = create_engine('postgres://localhost/genome', convert_unicode=True)
     try:
