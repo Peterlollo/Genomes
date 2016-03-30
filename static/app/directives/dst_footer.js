@@ -5,6 +5,7 @@ angular.module('genome.footer', [])
   return {
     controller: function($scope, $cookies, $rootScope, $location) {
       $scope.toAboutPage = function () {
+        $rootScope.curPage = '/about';
         $location.path('/about');
         $rootScope.removeHelix();
       };
