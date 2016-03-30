@@ -4,14 +4,14 @@ describe('Routing', function () {
   var $route;
   beforeEach(module('genome'));
 
-  beforeEach(inject(function ($injector) {
-    $route = $injector.get('$route');
+  beforeEach(inject(function ($route) {
   }));
-
+  describe('on success,', function() {
   it('Should have /signin route, template, and controller', function () {
     expect($route.routes['/']).to.be.defined;
     expect($route.routes['/'].controller).to.equal('AuthController');
     expect($route.routes['/'].templateUrl).to.equal('/');
+  });
   });
 
   it('Should have /pool route, template, and controller', function () {
@@ -25,5 +25,4 @@ describe('Routing', function () {
     expect($route.routes['/self'].controller).to.equal('SelfController');
     expect($route.routes['/self'].templateUrl).to.equal('/static/app/self/self.html');
   });
-
 });
